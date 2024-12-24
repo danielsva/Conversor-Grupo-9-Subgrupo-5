@@ -1,46 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
 void converter_comprimento();
 void converter_massa();
 void converter_temperatura();
 void conversorVelocidade();
+void conversorVolume();
 
 int main() {
     int escolha;
 
     printf("### Conversor de Unidades ###\n");
     printf("Escolha uma opção:\n");
-    printf("1 - Comprimento\n2 - Massa\n3 - Temperatura\n4 - Velocidade\n 5- Sair\n");
+    printf("1 - Comprimento\n2 - Massa\n3 - Temperatura\n4 - Velocidade\n5- Volume\n6- Sair\n");
 
     scanf("%d", &escolha);
 
-    while (escolha != 5) {
+    while (escolha != 6) {
         switch (escolha) {
             case 1:
-
-converter_comprimento();
-                break;
+                converter_comprimento();
+            break;
             case 2:
                 converter_massa();
-                break;
+            break;
             case 3:
-
-converter_temperatura();
-                break;
-            default:
-                printf(" Opcao invalida.\n");
-        }
-        printf("/nEscolha outra opcao ou 5 para sair:\n");
-        scanf("%d", &escolha);
-
+                converter_temperatura();
+            break;
             case 4:
-conversorVelocidade();
-                break;
+                conversorVelocidade();
+            break;
+            case 5:
+                conversorVolume();
+            break;
             default:
                 printf(" Opcao invalida.\n");
         }
-        printf("/nEscolha outra opcao ou 5 para sair:\n");
+        printf("\nEscolha outra opcao ou 6 para sair:\n");
         scanf("%d", &escolha);
     }
 
@@ -120,7 +118,53 @@ void conversorVelocidade(){
     } else {
         resultado = valor;
     }
+    
 
     printf("\nO resultado da conversao eh: %f\n\n", resultado);
+}
+
+void conversorVolume (){
+    float resultado = -1;
+    float valor;
+    char unidadeOrigem[4], unidadeDestino[4];
+
+
+
+    printf("qual a unidade de medida que voce deseja informar? (L, mL ou m3) \n");
+    scanf("%s", unidadeOrigem);
+
+    printf("qual o valor dessa unidade de medida?");
+    scanf("%f", &valor);
+
+    printf("para qual unidade de medida voce deseja converter?");
+    scanf("%s", unidadeDestino);
+
+    if(strcmp(unidadeOrigem, "L")== 0){
+        if(strcmp(unidadeDestino, "mL") == 0){
+            resultado = valor * 1000;
+        } else{
+            resultado = valor / 1000;
+        }
+    }
+
+    if(strcmp(unidadeOrigem, "mL")== 0){
+        if(strcmp(unidadeDestino, "L") == 0){
+            resultado = valor / 1000;
+        } else{
+            resultado = valor / pow(10, 6);
+        }
+    }
+
+    if(strcmp(unidadeOrigem, "m3")== 0){
+        if(strcmp(unidadeDestino, "L") == 0){
+            resultado = valor * 1000;
+        } else{
+            resultado = valor * pow(10, 6);
+        }
+    }
+
+    if(resultado != -1.0){
+        printf("Resultado: %0.2f %s", resultado, unidadeDestino);
+    }
 }
 
