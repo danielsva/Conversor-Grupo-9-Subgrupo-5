@@ -21,7 +21,7 @@ Como usar:
 Integrantes:
 
 - Gabriel Cavalcanti Coelho
-- a
+- Danrlei Almeida Araujo
 - a
 - a
 - a
