@@ -24,7 +24,7 @@ Integrantes:
 - Danrlei Almeida Araujo
 - Gabriel Neponuceno Batista
 - Lucas Vieira de Almeida
-- a
+- Daniel Souza Silva
 - a
 - a
 - a
