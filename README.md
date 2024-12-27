@@ -26,6 +26,6 @@ Integrantes:
 - Lucas Vieira de Almeida
 - Daniel Souza Silva
 - Danilo Silveira da Glória
-- a
+- Isabel Rosa de Santana
 - a
 - a
