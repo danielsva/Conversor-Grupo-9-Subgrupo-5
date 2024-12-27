@@ -25,7 +25,7 @@ Integrantes:
 - Gabriel Neponuceno Batista
 - Lucas Vieira de Almeida
 - Daniel Souza Silva
-- a
+- Danilo Silveira da Glória
 - a
 - a
 - a
