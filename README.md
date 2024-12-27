@@ -22,7 +22,7 @@ Integrantes:
 
 - Gabriel Cavalcanti Coelho
 - Danrlei Almeida Araujo
-- a
+- Gabriel Neponuceno Batista
 - a
 - a
 - a
