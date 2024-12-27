@@ -9,13 +9,14 @@ void converter_temperatura();
 void conversorVelocidade();
 void conversorVolume();
 void conversor_de_bits();
+void conversorTempo(); //Novo
 
 int main() {
     int escolha;
 
     printf("### Conversor de Unidades ###\n");
     printf("Escolha uma opção:\n");
-    printf("1 - Comprimento\n2 - Massa\n3 - Temperatura\n4 - Velocidade\n5- Volume\n 6- Bits\n 7- Sair\n");
+    printf("1 - Comprimento\n2 - Massa\n3 - Temperatura\n4 - Velocidade\n5- Volume\n 6- Bits\n 7-Tempo\n 8- Sair\n");
 
     scanf("%d", &escolha);
 
@@ -39,6 +40,9 @@ int main() {
             case 6:
                 conversor_de_bits();
             break;
+            case 7:
+                conversorTempo();
+            break;
             default:
                 printf(" Opcao invalida.\n");
         }
@@ -50,6 +54,7 @@ int main() {
     return 0;
 }
 
+
 void converter_comprimento() {
     float metros;
     printf("\nDigite o valor em metros: ");
@@ -58,11 +63,19 @@ void converter_comprimento() {
     printf("Milimetros: %.2f mm\n", metros * 1000);
 }
 
+void converterTempo() {
+    float tempo;
+    printf("\nDigite o tempo em horas: ");
+    scanf("%f", &tempo);
+    printf("Minutos: %.2f \n",tempo * 60);
+    printf("Segundos: %.2f \n",tempo * 3600);
+}
+
 void converter_massa() {
     float kg;
     printf("\nDigite o valor em quilogramas: ");
     scanf("%f", &kg);
-    printf("Gramas: %2.f g\n", kg * 1000);
+    printf("Gramas: %.2f g\n", kg * 1000);
     printf("Toneladas: %.3f t\n", kg / 1000);
 }
 
@@ -172,8 +185,7 @@ void conversorVolume (){
     }
 }
 
-void conversor_de_bits(){
-    double bitsToBytes(double bits) {
+double bitsToBytes(double bits) {
     return bits / 8;
 }
 
@@ -193,7 +205,7 @@ double gigabytesToTerabytes(double gigabytes) {
     return gigabytes / 1024;
 }
 
-int main() {
+void conversor_de_bits() {
     double value;
     int choice;
 
@@ -257,7 +269,5 @@ int main() {
         default:
             printf("Escolha inválida!\n");
     }
-
-    return 0;
-
 }
+
