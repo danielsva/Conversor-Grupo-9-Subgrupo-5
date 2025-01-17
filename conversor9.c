@@ -15,7 +15,7 @@ int main() {
 
     printf("### Conversor de Unidades ###\n");
     printf("Escolha uma opção:\n");
-    printf("1 - Comprimento\n2 - Massa\n3 - Temperatura\n4 - Velocidade\n5- Volume\n 6- Bits\n 7- Sair\n");
+    printf("1 - Comprimento\n2 - Massa\n3 - Temperatura\n4 - Velocidade\n5- Volume\n6- Bits\n7- Sair\n");
 
     scanf("%d", &escolha);
 
@@ -172,92 +172,65 @@ void conversorVolume (){
     }
 }
 
-void conversor_de_bits(){
-    double bitsToBytes(double bits) {
-    return bits / 8;
-}
+void conversor_de_bits() {
+    int opcaoOrigem, opcaoDestino;
+    double valor, resultado;
 
-double bytesToKilobytes(double bytes) {
-    return bytes / 1024;
-}
-
-double kilobytesToMegabytes(double kilobytes) {
-    return kilobytes / 1024;
-}
-
-double megabytesToGigabytes(double megabytes) {
-    return megabytes / 1024;
-}
-
-double gigabytesToTerabytes(double gigabytes) {
-    return gigabytes / 1024;
-}
-
-int main() {
-    double value;
-    int choice;
-
-    printf("Conversor de Unidades de Dados\n");
+    printf("\n--- Conversor de Bits e Bytes ---\n");
     printf("Escolha a unidade de origem:\n");
-    printf("1. Bits\n");
-    printf("2. Bytes\n");
-    printf("3. Kilobytes (KB)\n");
-    printf("4. Megabytes (MB)\n");
-    printf("5. Gigabytes (GB)\n");
-    printf("6. Terabytes (TB)\n");
-    printf("Escolha: ");
-    scanf("%d", &choice);
+    printf("1 - Bits (b)\n");
+    printf("2 - Bytes (B)\n");
+    printf("3 - Kilobits (Kb)\n");
+    printf("4 - Kilobytes (KB)\n");
+    printf("5 - Megabits (Mb)\n");
+    printf("6 - Megabytes (MB)\n");
+    printf("7 - Gigabits (Gb)\n");
+    printf("8 - Gigabytes (GB)\n");
+    scanf("%d", &opcaoOrigem);
+
+    printf("Escolha a unidade de destino:\n");
+    printf("1 - Bits (b)\n");
+    printf("2 - Bytes (B)\n");
+    printf("3 - Kilobits (Kb)\n");
+    printf("4 - Kilobytes (KB)\n");
+    printf("5 - Megabits (Mb)\n");
+    printf("6 - Megabytes (MB)\n");
+    printf("7 - Gigabits (Gb)\n");
+    printf("8 - Gigabytes (GB)\n");
+    scanf("%d", &opcaoDestino);
 
     printf("Digite o valor a ser convertido: ");
-    scanf("%lf", &value);
+    scanf("%lf", &valor);
 
-    switch (choice) {
-        case 1:
-            printf("%lf Bits = %lf Bytes\n", value, bitsToBytes(value));
-            printf("%lf Bits = %lf Kilobytes (KB)\n", value, bytesToKilobytes(bitsToBytes(value)));
-            printf("%lf Bits = %lf Megabytes (MB)\n", value, kilobytesToMegabytes(bytesToKilobytes(bitsToBytes(value))));
-            printf("%lf Bits = %lf Gigabytes (GB)\n", value, megabytesToGigabytes(kilobytesToMegabytes(bytesToKilobytes(bitsToBytes(value)))));
-            printf("%lf Bits = %lf Terabytes (TB)\n", value, gigabytesToTerabytes(megabytesToGigabytes(kilobytesToMegabytes(bytesToKilobytes(bitsToBytes(value))))));
-            break;
-        case 2:
-            printf("%lf Bytes = %lf Bits\n", value, value * 8);
-            printf("%lf Bytes = %lf Kilobytes (KB)\n", value, bytesToKilobytes(value));
-            printf("%lf Bytes = %lf Megabytes (MB)\n", value, kilobytesToMegabytes(bytesToKilobytes(value)));
-            printf("%lf Bytes = %lf Gigabytes (GB)\n", value, megabytesToGigabytes(kilobytesToMegabytes(bytesToKilobytes(value))));
-            printf("%lf Bytes = %lf Terabytes (TB)\n", value, gigabytesToTerabytes(megabytesToGigabytes(kilobytesToMegabytes(bytesToKilobytes(value)))));
-            break;
-        case 3:
-            printf("%lf Kilobytes (KB) = %lf Bytes\n", value, value * 1024);
-            printf("%lf Kilobytes (KB) = %lf Bits\n", value, value * 1024 * 8);
-            printf("%lf Kilobytes (KB) = %lf Megabytes (MB)\n", value, kilobytesToMegabytes(value));
-            printf("%lf Kilobytes (KB) = %lf Gigabytes (GB)\n", value, megabytesToGigabytes(kilobytesToMegabytes(value)));
-            printf("%lf Kilobytes (KB) = %lf Terabytes (TB)\n", value, gigabytesToTerabytes(megabytesToGigabytes(kilobytesToMegabytes(value))));
-            break;
-        case 4:
-            printf("%lf Megabytes (MB) = %lf Kilobytes (KB)\n", value, value * 1024);
-            printf("%lf Megabytes (MB) = %lf Bytes\n", value, value * 1024 * 1024);
-            printf("%lf Megabytes (MB) = %lf Bits\n", value, value * 1024 * 1024 * 8);
-            printf("%lf Megabytes (MB) = %lf Gigabytes (GB)\n", value, megabytesToGigabytes(value));
-            printf("%lf Megabytes (MB) = %lf Terabytes (TB)\n", value, gigabytesToTerabytes(megabytesToGigabytes(value)));
-            break;
-        case 5:
-            printf("%lf Gigabytes (GB) = %lf Megabytes (MB)\n", value, value * 1024);
-            printf("%lf Gigabytes (GB) = %lf Kilobytes (KB)\n", value, value * 1024 * 1024);
-            printf("%lf Gigabytes (GB) = %lf Bytes\n", value, value * 1024 * 1024 * 1024);
-            printf("%lf Gigabytes (GB) = %lf Bits\n", value, value * 1024 * 1024 * 1024 * 8);
-            printf("%lf Gigabytes (GB) = %lf Terabytes (TB)\n", value, gigabytesToTerabytes(value));
-            break;
-        case 6:
-            printf("%lf Terabytes (TB) = %lf Gigabytes (GB)\n", value, value * 1024);
-            printf("%lf Terabytes (TB) = %lf Megabytes (MB)\n", value, value * 1024 * 1024);
-            printf("%lf Terabytes (TB) = %lf Kilobytes (KB)\n", value, value * 1024 * 1024 * 1024);
-            printf("%lf Terabytes (TB) = %lf Bytes\n", value, value * 1024 * 1024 * 1024 * 1024);
-            printf("%lf Terabytes (TB) = %lf Bits\n", value, value * 1024 * 1024 * 1024 * 1024 * 8);
-            break;
+    // Conversão para bits
+    switch (opcaoOrigem) {
+        case 1: resultado = valor; break;               // Bits
+        case 2: resultado = valor * 8; break;           // Bytes
+        case 3: resultado = valor * 1000; break;        // Kilobits
+        case 4: resultado = valor * 8000; break;        // Kilobytes
+        case 5: resultado = valor * 1000000; break;     // Megabits
+        case 6: resultado = valor * 8000000; break;     // Megabytes
+        case 7: resultado = valor * 1000000000; break;  // Gigabits
+        case 8: resultado = valor * 8000000000; break;  // Gigabytes
         default:
-            printf("Escolha inválida!\n");
+            printf("Opcao de origem invalida.\n");
+            return;
     }
 
-    return 0;
+    // Conversão de bits para a unidade de destino
+    switch (opcaoDestino) {
+        case 1: break;                                   // Bits
+        case 2: resultado /= 8; break;                  // Bytes
+        case 3: resultado /= 1000; break;               // Kilobits
+        case 4: resultado /= 8000; break;               // Kilobytes
+        case 5: resultado /= 1000000; break;            // Megabits
+        case 6: resultado /= 8000000; break;            // Megabytes
+        case 7: resultado /= 1000000000; break;         // Gigabits
+        case 8: resultado /= 8000000000; break;         // Gigabytes
+        default:
+            printf("Opcao de destino invalida.\n");
+            return;
+    }
 
+    printf("Resultado: %.2lf\n", resultado);
 }
