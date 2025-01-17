@@ -27,5 +27,3 @@ Integrantes:
 - Daniel Souza Silva
 - Danilo Silveira da Glória
 - Isabel Rosa de Santana
-- a
-- a
